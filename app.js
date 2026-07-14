@@ -1,7 +1,7 @@
 const express = require("express");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Set EJS as the template engine
 app.set("view engine", "ejs");
@@ -44,5 +44,5 @@ app.post("/submit", (req, res) => {
 
 // Start the server
 app.listen(PORT, () => {
-    console.log(`Server is running at http://localhost:${PORT}`);
+    console.log(`Server is running at ${PORT}`);
 });
